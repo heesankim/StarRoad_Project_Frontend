@@ -183,7 +183,7 @@ const PlannerMap = () => {
     setAddPlanInfo((prev) => ({ ...prev, startDate, endDate }));
   };
 
-  const onClickPlaceItem = (item) => {};
+  // const onClickPlaceItem = (item) => {};
 
   const PlaceListComponent = useMemo(() => {
     return (
@@ -191,7 +191,7 @@ const PlannerMap = () => {
         places={places}
         infowindow={infowindow}
         handleDisplayInfowindow={handleDisplayInfowindow}
-        onClickPlaceItem={onClickPlaceItem}
+        // onClickPlaceItem={onClickPlaceItem}
       />
     );
   }, [markers, places]);

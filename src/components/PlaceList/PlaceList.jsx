@@ -1,38 +1,20 @@
-import { useMemo, useState } from "react";
 import Modal from "../modal/modal";
 import { ModalPortal } from "../modal/ModalPortal";
 import { useModalStore } from "../../store/store";
-import AddDestination from "../AddDestination/AddDestination";
 import { usePlannerMapContext } from "../../Contexts/PlannerMapContext";
 
 const PlaceList = (props) => {
-  const {
-    places,
-    infowindow,
-    handleDisplayInfowindow,
-    onClickPlaceItem, // callback props 자식 -> 부모 컴포넌트로 props(데이터)를 끌어올림
-    selectedDayPlaces,
-    setSelectedDayPlaces,
-    renderPlaces,
-  } = props;
+  const { places, infowindow, handleDisplayInfowindow } = props;
+
   const { openModal } = useModalStore();
-  const [selectedPlaces, setSelectedPlaces] = useState([]);
 
   const { onSelectPlace } = usePlannerMapContext();
 
   // + 버튼 눌렀을 때 장소 넘겨주는 함수
   const handleAddPlace = (index) => {
     const place = places[index];
-    onClickPlaceItem(place);
     onSelectPlace(place);
   };
-
-  const AddDestinationComponents = useMemo(() => {
-    <AddDestination
-      handleAddPlace={handleAddPlace}
-      renderPlaces={renderPlaces}
-    />;
-  });
 
   return (
     <div style={{ color: "black" }}>
