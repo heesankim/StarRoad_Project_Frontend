@@ -1,4 +1,4 @@
-# starRoad
+# starRoad
 
 # starRoad - 국내 여행지 추천 서비스
 ![starRoad_2](https://github.com/solssak/star_Road/assets/107416133/31324a81-afc7-49c3-b538-6cb1fdf4dfd1)
